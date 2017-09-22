@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     @corp_power = Faker::Company.bs.titleize
     
     @rand_num = rand(1..1000)
-    @set_number = rand(1..4)
+    @set_number = rand(1..3)
     @bg = rand(1..2)
     # Randomly pick our Avatar set
     
@@ -17,10 +17,8 @@ class HomeController < ApplicationController
       @set = "set1"
     elsif @set_number == 2
       @set = "set2"
-    elsif @set_number == 3
+    else 
       @set = "set3"
-    else
-      @set = "set4"
     end
     
     # Randomly picks a Background set
@@ -32,7 +30,7 @@ class HomeController < ApplicationController
     end
     
     @avatar = Faker::Avatar.image(@rand_num, "300x300", "png", @set, @background)
-    
+    @side_kick = Faker::Avatar.image(@rand_num, "175x175", "png", "set4", @background)
   end
   
   def index
