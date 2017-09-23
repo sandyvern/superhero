@@ -1,33 +1,36 @@
 <div class="panel panel-default">
-  <div class="panel-heading"><h3 class="panel-title gray"><%= link_to "Click Here To Generate A New Superhero", root_path %></h3></div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag @avatar %>
-        </div>
-        <div class="col-md-4">
-          <h3>Superhero Name: <br>
-            <span class="corp_red"><%= @hero_prefix %> <%= @hero_name %></span>
-          </h3>
-          <h3>Superhero Power: <br>
-            <span class="corp_red"><%= @hero_power %></span>
-          </h3>
-          
-          <br><br>
-          
-          <h4>Your Undercover Day Job is: <br>
-            <span class="red"><%= @corp_title %></span>
-          </h4>
-          <h4>Your Corporate Super Power is: <br>
-            <span class="red"><%= @corp_power %></span>
-          </h4>
-          </div>
+  <div class="panel-heading">
+    <h3 class="panel-title gray"><%= link_to "Click Here To Generate A New Superhero", root_path %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @avatar%>
+      </div>
+      <div class="col-md-4">
+        <h3>Superhero Name: <br>
+          <span class="corp_red"><%= @hero_prefix %> <%= @hero_name %></span>
+        </h3>
+        <h3>Superhero Power: <br>
+          <span class="corp_red"><%= @hero_power %></span>
+        </h3>
         
-        <div class="col-md-4 text-center">
-          <h3>Super Sidekick:</h3> <br></br>
-          <%= image_tag @side_kick %>
+        <br><br>
+        
+        <h4>Your Undercover Day Job is: <br>
+          <span class="red"><%= @corp_title %></span>
+        </h4>
+        <h4>Your Corporate Super Power is: <br>
+          <span class="red"><%= @corp_power %></span>
+        </h4>
         </div>
+      
+      <div class="col-md-4 sidekick">
+        <h3>Super Sidekick:</h3> <br></br>
+        <%= image_tag @side_kick %>
       </div>
     </div>
+  </div>
   <div class="panel-footer"><%= link_to "Create A Whole Superhero Team", home_team_path %></div>
 </div>
