@@ -2,7 +2,32 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag @avatar%>
+<!----------------------------------------------------------------------------------------->
+    <% rand_num = rand(1..1000) %>
+    <% set_number = rand(1..3) %>
+    <% bg = rand(1..2) %>
+    <!--# Randomly pick our Avatar set-->
+    
+    <% if set_number == 1 %>
+      <% set = "set1" %>
+    <% elsif set_number == 2 %>
+      <% set = "set2" %>
+    <% else %>
+      <% set = "set3" %>
+    <% end %>
+    
+    <!--# Randomly picks a Background set-->
+  
+    <% if bg == 1 %>
+     <%  background = "bg1" %>
+    <% else %>
+     <% background = "bg2" %>
+    <% end %>
+    
+    <% avatar = Faker::Avatar.image(rand_num, "300x300", "png", set, background) %>
+    <% side_kick = Faker::Avatar.image(rand_num, "175x175", "png", "set4", background) %>
+<!----------------------------------------------------------------------------------------->
+      <%= image_tag avatar%>
     </div>
     <div class="col-md-4">
       <h3>Superhero Name: <br>
@@ -24,7 +49,7 @@
     
     <div class="col-md-4 sidekick">
       <h3>Super Sidekick:</h3> <br></br>
-      <%= image_tag @side_kick %>
+      <%= image_tag side_kick %>
     </div>
   </div>
   
