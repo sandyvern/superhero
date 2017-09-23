@@ -1,0 +1,35 @@
+<% @team_number.times do %>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @avatar%>
+    </div>
+    <div class="col-md-4">
+      <h3>Superhero Name: <br>
+        <span class="corp_red"><%= Faker::Superhero.prefix %> <%= Faker::Superhero.name %></span>
+      </h3>
+      <h3>Superhero Power: <br>
+        <span class="corp_red"><%= Faker::Superhero.power %></span>
+      </h3>
+      
+      <br><br>
+      
+      <h4>Your Undercover Day Job is: <br>
+        <span class="red"><%= Faker::Name.title %></span>
+      </h4>
+      <h4>Your Corporate Super Power is: <br>
+        <span class="red"><%= Faker::Company.bs.titleize %></span>
+      </h4>
+      </div>
+    
+    <div class="col-md-4 sidekick">
+      <h3>Super Sidekick:</h3> <br></br>
+      <%= image_tag @side_kick %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <hr>
+  </div>
+
+<% end %>
